@@ -1,0 +1,33 @@
+""" The Angry Sommelier!
+
+V.basic Pseudocode for the Angry Sommelier Game
+
+Winning conditions: Not Losing
+
+Losing conditions: Picking the worst wine out of a selection of 4 in any of the 3 rounds
+
+Game flow:
+
+A statement is printed welcoming the player to the game with the idea of the game laid out, you will be asked to choose a wine to accompany each of three courses, you must impress your date.
+The Sommelier that works in restaurant is crazy and will throw you out if you make a bad choice!
+
+An appetizer choice is printed (print appetizer) 
+
+The statement "You are shown the wine list, four wines catch your eye..." is printed (print Four_wines)
+
+The user is asked to choose from a list (rawinput and print wine_list_appetizer)
+
+If the user selects the bad wine a statement is printed showing the sommelier kicked them out (if "bad wine" print bad_wine)
+If the user selects the best wine they are rewarded with praise (elif print praise)
+If the user selects the two OK wines a statement is printed showing their mediocrity, although they remain in the restaurant for now (else print OK_wine)
+
+This continues through the courses: Main Course (variables for main_course to be paired and list for wine_list_main) and Dessert (variable for Dessert and list for wine_list_dessert)
+
+String functions would be used to normalise user feedback given using raw input to prevent errors
+
+A loop encourages replay at the end"""
+
+
+
+
+
