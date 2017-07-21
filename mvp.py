@@ -1,0 +1,117 @@
+#The Angry Sommelier!
+
+"""
+
+Winning conditions: Not Losing
+
+Losing conditions: Picking the worst wine out of a selection of 4 in any of the 3 rounds
+
+"""
+
+#Welcome and set up statements:
+
+player_name = raw_input("What is your name? ")
+date_name = raw_input("What is your date's name?")
+welcome = "Welcome to the Haute Maison Restaurant," + player_name + "!" + "Thank you for bringing your date, " + date_name + " with you."
+welcome_continued = "You have brought your date, "+ date_name + ", to the restaurant to impress them. Haute Maison is a very exclusive restaurant, you will be served a 3 course meal, selected by the Chef, Chef JacqueAss. You will be asked to select wines a la carte to go with your meal."
+sommelier_intro = "However be careful, the Sommelier at the Haute Maison is crazy. If you select a wine that doesn't pair with Chef Jacques food, he may mock you or ask you to leave, and that's not going to impress " + date_name +" is it?"
+
+print welcome
+print welcome_continued
+print sommelier_intro
+
+# I need to work out this commented out section below, this doesn't make sense right now, this is optional really though:
+#continue_choice = rawinput("If you wish to continue to your table and meet the sommelier, please follow me by typing 'follow'")
+#	if "follow" then playing = true
+#	else print "Sorry to lose you " + player_name + ", I hope you will return to this madhouse soon! Mwahaha!"
+
+#meal wine lists
+
+appetizer_wine_list = ["champagne", "merlot", "chardonnay"]
+main_wine_list = []
+dessert_wine_list = []
+
+#meal food lists
+
+appetizers = ["Spinach and Goat Cheese Tartlet" , "Lobster-Avocado Cocktail" , "Salmon Rillettes" , "Twice Baked Souffle with Port Sauce"]
+#mains = []
+#desserts = []
+
+#For extra fun and chaos a meal is selected at random from the lists and assigned to app, main and dessert variables used above
+# making it extra fun if you play the game again
+
+import random
+
+appetizer = random.choice(appetizers)
+#main_course = random.choice(mains)
+#dessert = random.choice(desserts)
+
+#Next section at your table welcome and meal variables:
+
+welcome_to_your_table = "Welcome to your table, I am your Sommelier, Ann Garry."
+your_appetizer = "Your appetizer today will be, " + appetizer
+#your_main_course = "Your main course today will be, " + main_course
+#your_dessert = "Your dessert today will be, " + dessert
+
+#Show list Function
+
+def show_list (wine_list):
+
+	print "Please select a wine from the wine list by number. The wine list is: "
+
+	for index in range(len(wine_list)):
+    		print "{}. {}".format(index,wine_list[index])
+
+# Wine Selection Function
+
+def wine_selection():
+	wine_choice = raw_input("What is your selection?: ")
+	wine_choice = int(wine_choice)
+	if wine_choice == 0 :
+		print "Get out of my restaurant!" 
+	elif wine_choice == 1 :
+		print "Good Choice!"
+	else:
+		print "I guess that's OK, humph"
+
+#Appetizer play begins!
+
+print welcome_to_your_table
+print your_appetizer
+show_list(appetizer_wine_list)
+wine_selection()
+
+
+# #Need to change this into FUNCTIONS and WHILE LOOPS to ensure play continues or ends where it is logical to do so. 
+
+# #Main Course play begins! Do I need a segue between Appetizer and main course??
+
+# print your_main_course
+# print select_a_wine
+# print main_wine_list
+
+# selection = raw_input("What is your selection?: ")
+# #	if : (top wine selection, reward user)
+# #	elif: (worst wine selection, kick user out of the restaurant!)
+# #	else: (mediochre wine selection, user mocked)
+
+# #Need to change this into FUNCTIONS and WHILE LOOPS to ensure play continues or ends where it is logical to do so. 
+
+# #Dessert play begins! Do I need a segue between Main Course and Dessert? 
+
+# print your_appetizer
+# print select_a_wine
+# print appetizer_wine_list
+
+# selection = raw_input("What is your selection?: ")
+# #	if : (top wine selection, reward user)
+# #	elif: (worst wine selection, kick user out of the restaurant!)
+# #	else: (mediochre wine selection, user mocked)
+
+# #Need to change this into FUNCTIONS and WHILE LOOPS to ensure play continues or ends where it is logical to do so. 
+
+
+
+
+
+
