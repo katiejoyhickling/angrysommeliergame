@@ -28,14 +28,14 @@ print sommelier_intro
 #meal wine lists
 
 appetizer_wine_list = ["champagne", "merlot", "chardonnay"]
-main_wine_list = []
-dessert_wine_list = []
+main_wine_list = ["champagne", "merlot", "chardonnay"]
+dessert_wine_list = ["champagne", "merlot", "chardonnay"]
 
 #meal food lists
 
 appetizers = ["Spinach and Goat Cheese Tartlet" , "Lobster-Avocado Cocktail" , "Salmon Rillettes" , "Twice Baked Souffle with Port Sauce"]
-#mains = []
-#desserts = []
+mains = ["Skate wing in cream sauce" , "Pork cutlets with a cranberry jus" , "Desconstructed vegan Moussakka"]
+desserts = ["A tea scented gateau with earl grey foam" , "Marscapone tower" , "Black forest Mousse"]
 
 #For extra fun and chaos a meal is selected at random from the lists and assigned to app, main and dessert variables used above
 # making it extra fun if you play the game again
@@ -43,15 +43,15 @@ appetizers = ["Spinach and Goat Cheese Tartlet" , "Lobster-Avocado Cocktail" , "
 import random
 
 appetizer = random.choice(appetizers)
-#main_course = random.choice(mains)
-#dessert = random.choice(desserts)
+main_course = random.choice(mains)
+dessert = random.choice(desserts)
 
 #Next section at your table welcome and meal variables:
 
 welcome_to_your_table = "Welcome to your table, I am your Sommelier, Ann Garry."
 your_appetizer = "Your appetizer today will be, " + appetizer
-#your_main_course = "Your main course today will be, " + main_course
-#your_dessert = "Your dessert today will be, " + dessert
+your_main_course = "Your main course today will be, " + main_course
+your_dessert = "Your dessert today will be, " + dessert
 
 #Show list Function
 
@@ -59,8 +59,13 @@ def show_list (wine_list):
 
 	print "Please select a wine from the wine list by number. The wine list is: "
 
-	for index in range(len(wine_list)):
-    		print "{}. {}".format(index,wine_list[index])
+	for index, wine in enumerate(wine_list):
+		print "{}. {}".format(index,wine)
+
+#Could also do like this: Tested, both work- 
+
+	#for index in range(len(wine_list)):
+    		#print "{}. {}".format(index,wine_list[index])
 
 # Wine Selection Function
 
@@ -70,15 +75,26 @@ def wine_selection():
 	if wine_choice == 0 :
 		print "Get out of my restaurant!" 
 	elif wine_choice == 1 :
-		print "Good Choice!"
+		print "Good Choice! You are a great catch"
 	else:
-		print "I guess that's OK, humph"
+		print "I guess that's OK, humph, your judgement is questionable..."
 
 #Appetizer play begins!
 
 print welcome_to_your_table
 print your_appetizer
 show_list(appetizer_wine_list)
+wine_selection()
+
+
+#Main Course
+print your_main_course
+show_list(main_wine_list)
+wine_selection()
+
+#Dessert
+print your_dessert
+show_list(dessert_wine_list)
 wine_selection()
 
 
