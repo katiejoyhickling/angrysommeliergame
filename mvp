@@ -41,7 +41,7 @@ dessert_wine_list = []
 
 #meal food lists
 
-appetizers = []
+appetizers = ["Spinach and Goat Cheese Tartlet" , "Lobster-Avocado Cocktail" , "Salmon Rillettes" , "Twice Baked Souffle with Port Sauce"]
 mains = []
 desserts = []
 
