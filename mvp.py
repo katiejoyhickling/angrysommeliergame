@@ -4,67 +4,24 @@
 
 Winning conditions: Not Losing
 
-Losing conditions: Picking the worst wine out of a selection of 4 in any of the 3 rounds
+Losing conditions: Picking the worst wine out of a selection in any of the 3 rounds, which stops play
 
 """
 
-#While loop for Game play
+#Importing Modules for use in game
 
+import random 
 
-#Welcome and set up statements:
+#FUNCTIONS
 
-player_name = raw_input("What is your name? ")
-date_name = raw_input("What is your date's name?")
-welcome = "Welcome to the Haute Maison Restaurant," + player_name + "!" + "Thank you for bringing your date, " + date_name + " with you."
-welcome_continued = "You have brought your date, "+ date_name + ", to the restaurant to impress them. Haute Maison is a very exclusive restaurant, you will be served a 3 course meal, selected by the Chef, Chef JacqueAss. You will be asked to select wines a la carte to go with your meal."
-sommelier_intro = "However be careful, the Sommelier at the Haute Maison is crazy. If you select a wine that doesn't pair with Chef Jacques food, he may mock you or ask you to leave, and that's not going to impress " + date_name +" is it?"
+#Welcome Function
 
-#While loop, but just loops over print welcome and user choice, needs work
-# playing = True
-# while playing:
-# 	print welcome
-# 	user_choice = raw_input("Would you like to continue to your table (enter Y) or exit (enter E)?: ").capitalize()
-# 	if user_choice == "E":
-# 		playing = False
+def welcome (player_name, date_name):
+	print "Welcome to the Haute Maison Restaurant, " + player_name + "! \n"+ "Thank you for bringing your date, " + date_name + " with you.\n"
+	print "You have brought your date, "+ date_name + ", to the restaurant to impress them.\nYou will be served a 3 course meal, selected by Chef JacqueAss. \nYou will select wines to go with your meal.\n"
+	print "However be careful, the Sommelier at the Haute Maison is crazy.\nIf you select a wine that doesn't pair with Chef Jacques food, he may mock you or ask you to leave, and that's not going to impress " + date_name +" is it?\n\n"
 
-
-print welcome_continued
-print sommelier_intro
-
-# I need to work out this commented out section below, this doesn't make sense right now, this is optional really though:
-#continue_choice = rawinput("If you wish to continue to your table and meet the sommelier, please follow me by typing 'follow'")
-#	if "follow" then playing = true
-#	else print "Sorry to lose you " + player_name + ", I hope you will return to this madhouse soon! Mwahaha!"
-
-#meal wine lists
-
-appetizer_wine_list = ["Moet & Chandon Champagne", "Vintage Merlot", " Australian Chardonnay", "Alsace Reisling" , "Trader Joe's 2 buck chuck"]
-main_wine_list = ["Californian Sauvignon Blanc", "Old World Pinot Noir", "South African Chardonnay" , "Rhone Valley Shiraz"]
-dessert_wine_list = ["Muscadelle", "Sauternes", "Pinot Gris", "Prosecco"]
-
-#meal food lists
-
-appetizers = ["Spinach and Goat Cheese Tartlet" , "Lobster-Avocado Cocktail" , "Salmon Rillettes" , "Twice Baked Souffle with Port Sauce"]
-mains = ["Skate wing in cream sauce" , "Pork cutlets with a cranberry jus" , "Desconstructed vegan Moussakka"]
-desserts = ["A tea scented gateau with earl grey foam" , "Marscapone tower" , "Black forest Mousse"]
-
-#For extra fun and chaos a meal is selected at random from the lists and assigned to app, main and dessert variables used above
-# making it extra fun if you play the game again
-
-import random
-
-appetizer = random.choice(appetizers)
-main_course = random.choice(mains)
-dessert = random.choice(desserts)
-
-#Next section at your table welcome and meal variables:
-
-welcome_to_your_table = "Welcome to your table, I am your Sommelier, Ann Garry."
-your_appetizer = "Your appetizer today will be, " + appetizer
-your_main_course = "Your main course today will be, " + main_course
-your_dessert = "Your dessert today will be, " + dessert
-
-#Show list Function
+#Show list function
 
 def show_list (wine_list):
 
@@ -84,58 +41,78 @@ def wine_selection():
 	wine_choice = raw_input("What is your selection?: ")
 	wine_choice = int(wine_choice)
 	if wine_choice == 0 :
-		print "Get out of my restaurant!" 
+		print "\nSommelier says: Get out of my restaurant!\n" 
+		return False
 	elif wine_choice == 1 :
-		print "Good Choice! You are a great catch"
+		print "\nSommelier says: Good Choice! You are a great catch\n"
+		return True
 	else:
-		print "I guess that's OK, humph, your judgement is questionable..."
+		print "\nSommelier says: I guess that's OK, humph, your judgement is questionable...\n"
+		return True
 
-#Appetizer play begins!
+#Course play function
 
-print welcome_to_your_table
-print your_appetizer
-show_list(appetizer_wine_list)
-wine_selection()
+def course (course_name, course, course_wine_list):
+	print "Your " + course_name + " today will be, " + course
+	show_list(course_wine_list)
+	wine_selection()
 
+#------------PYTHON STARTS RUNNING FROM HERE------------
 
-#Main Course
-print your_main_course
-show_list(main_wine_list)
-wine_selection()
+#Lists to be used in game play------
 
-#Dessert
-print your_dessert
-show_list(dessert_wine_list)
-wine_selection()
+#meal wine lists
 
+appetizer_wine_list = ["Moet & Chandon Champagne", "Vintage Merlot", "Australian Chardonnay", "Alsace Reisling" , "Trader Joe's 2 buck chuck"]
+main_wine_list = ["Californian Sauvignon Blanc", "Old World Pinot Noir", "South African Chardonnay" , "Rhone Valley Shiraz"]
+dessert_wine_list = ["Muscadelle", "Sauternes", "Pinot Gris", "Prosecco"]
 
-# #Need to change this into FUNCTIONS and WHILE LOOPS to ensure play continues or ends where it is logical to do so. 
+#meal food lists
 
-# #Main Course play begins! Do I need a segue between Appetizer and main course??
+appetizers = ["Spinach and Goat upside down cake" , "Lobster-Avocado Cocktail" , "Salmon Rillettes with smoked kelp" , "Quadruple Baked Souffle with Port"]
+mains = ["Skate wing with shaved sea ice" , "Pork cheeks in a black tuffle bao" , "Desconstructed Vegan Moussakka" , "Quail and dandelions with fermented pepper"]
+desserts = ["A tea scented gateau with earl grey foam" , "Marscapone tower" , "A test tube of Black Forest Mousse" , "A edible balloon of pineapple smoked air"]
 
-# print your_main_course
-# print select_a_wine
-# print main_wine_list
+#End of lists-----------
 
-# selection = raw_input("What is your selection?: ")
-# #	if : (top wine selection, reward user)
-# #	elif: (worst wine selection, kick user out of the restaurant!)
-# #	else: (mediochre wine selection, user mocked)
+#Playing is contained in a While Loop to allow game to be played again:
 
-# #Need to change this into FUNCTIONS and WHILE LOOPS to ensure play continues or ends where it is logical to do so. 
+while True:
 
-# #Dessert play begins! Do I need a segue between Main Course and Dessert? 
+	#Welcome and set up statements:
 
-# print your_appetizer
-# print select_a_wine
-# print appetizer_wine_list
+	player_name = raw_input("What is your name? ")
+	date_name = raw_input("What is your date's name?")
+	welcome(player_name, date_name)
 
-# selection = raw_input("What is your selection?: ")
-# #	if : (top wine selection, reward user)
-# #	elif: (worst wine selection, kick user out of the restaurant!)
-# #	else: (mediochre wine selection, user mocked)
+	#For extra fun and chaos a meal is selected at random from the lists and assigned to app, main and dessert variables used above
+	# making it extra fun if you play the game again
 
-# #Need to change this into FUNCTIONS and WHILE LOOPS to ensure play continues or ends where it is logical to do so. 
+	appetizer = random.choice(appetizers)
+	main_course = random.choice(mains)
+	dessert = random.choice(desserts)
+
+	#Next section at your table welcome and meal variables:
+	welcome_to_your_table = "Welcome to your table, I am your Sommelier, Ann Garry."
+
+	#Play begins!
+
+	#Appetizer
+	print welcome_to_your_table
+	course ("appetizer", appetizer, appetizer_wine_list)
+
+	#Main Course
+	course ("entree", main_course, main_wine_list)
+
+	#Dessert
+	course ("dessert", dessert, dessert_wine_list)
+
+	#End of game
+
+	play_again = raw_input("Thanks for playing, to play again enter Y: ").capitalize()
+	if play_again != "Y":
+		break
+
 
 
 
