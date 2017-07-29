@@ -8,6 +8,9 @@ Losing conditions: Picking the worst wine out of a selection of 4 in any of the 
 
 """
 
+#While loop for Game play
+
+
 #Welcome and set up statements:
 
 player_name = raw_input("What is your name? ")
@@ -16,7 +19,15 @@ welcome = "Welcome to the Haute Maison Restaurant," + player_name + "!" + "Thank
 welcome_continued = "You have brought your date, "+ date_name + ", to the restaurant to impress them. Haute Maison is a very exclusive restaurant, you will be served a 3 course meal, selected by the Chef, Chef JacqueAss. You will be asked to select wines a la carte to go with your meal."
 sommelier_intro = "However be careful, the Sommelier at the Haute Maison is crazy. If you select a wine that doesn't pair with Chef Jacques food, he may mock you or ask you to leave, and that's not going to impress " + date_name +" is it?"
 
-print welcome
+#While loop, but just loops over print welcome and user choice, needs work
+# playing = True
+# while playing:
+# 	print welcome
+# 	user_choice = raw_input("Would you like to continue to your table (enter Y) or exit (enter E)?: ").capitalize()
+# 	if user_choice == "E":
+# 		playing = False
+
+
 print welcome_continued
 print sommelier_intro
 
@@ -27,9 +38,9 @@ print sommelier_intro
 
 #meal wine lists
 
-appetizer_wine_list = ["champagne", "merlot", "chardonnay"]
-main_wine_list = ["champagne", "merlot", "chardonnay"]
-dessert_wine_list = ["champagne", "merlot", "chardonnay"]
+appetizer_wine_list = ["Moet & Chandon Champagne", "Vintage Merlot", " Australian Chardonnay", "Alsace Reisling" , "Trader Joe's 2 buck chuck"]
+main_wine_list = ["Californian Sauvignon Blanc", "Old World Pinot Noir", "South African Chardonnay" , "Rhone Valley Shiraz"]
+dessert_wine_list = ["Muscadelle", "Sauternes", "Pinot Gris", "Prosecco"]
 
 #meal food lists
 
