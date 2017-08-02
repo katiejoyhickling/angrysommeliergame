@@ -133,7 +133,7 @@ while True:
 	#Welcome and set up statements:
 
 	player_name = raw_input("What is your name? ")
-	date_name = raw_input("What is your date's name?")
+	date_name = raw_input("What is your date's name? ")
 	if welcome(player_name, date_name) == False:
 		break
 
