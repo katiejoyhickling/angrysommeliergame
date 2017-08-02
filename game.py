@@ -115,7 +115,7 @@ appetizers = {"Spinach and goat cheese upside down cake": (2 , 4),
 			  "Quadruple Baked Souffle with Port Reduction": (1 , 0)}
 
 mains = {"Skate wing with shaved sea ice": (0 , 1), 
-		 "Pork cheeks in a black tuffle bao" : (1 , 3), 
+		 "Pork cheeks in a black tuffle bao" : (3 , 1), 
 		 "Desconstructed Vegan Moussakka": (3 , 0), 
 		 "Quail and dandelions with fermented pepper": (1 , 2)}
 
